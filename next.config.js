@@ -1,19 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  serverRuntimeConfig: {
-    // Will only be available on the server side
-    mySecret: 'secret',
-    secondSecret: process.env.SECOND_SECRET, // Pass through env variables
-  },
-  publicRuntimeConfig: {
-    // Will be available on both server and client
-    siteName: 'AP2 Site',
-    siteShortDesc: 'Building fun things',
-    siteUrl: 'https://www.apsquared.co',
-  },
+
   experimental:{
     appDir:true,
-  }
+  },
+  webpack(config) {
+    config.experiments = {
+      asyncWebAssembly: true,
+      layers: true,
+    };
+
+    return config;
+  },
 
 };
 
