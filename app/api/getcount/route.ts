@@ -4,10 +4,11 @@ export type Count = {
     count:number,
     type:string,
 }
+//console.log("TEST");
 
 export async function GET(request: Request) {
 
-  console.log("here");
+  ////console.log("here");
   const { searchParams } = new URL(request.url);
   const type = searchParams.get("type");
 

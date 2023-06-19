@@ -1,18 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
-  experimental:{
-    appDir:true,
+  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  experimental: {
+    appDir: true,
   },
-  webpack(config) {
-    config.experiments = {
-      asyncWebAssembly: true,
-      layers: true,
-    };
-
-    return config;
-  },
-
 };
 
 module.exports = nextConfig;
