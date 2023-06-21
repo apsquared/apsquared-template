@@ -29,10 +29,14 @@
 
 Follow: https://next-auth.js.org/providers/google to get client_id and secret
 
+Note: still seem to need to run npm i next-auth@0.0.0-pr.7214.4142955d for
+
 Set envs:
 
 GOOGLE_CLIENT_ID=""
 GOOGLE_CLIENT_SECRET=""
+
+Helpful link: https://codevoweb.com/setup-and-use-nextauth-in-nextjs-13-app-directory/
 
 ## Cloning Repos
 

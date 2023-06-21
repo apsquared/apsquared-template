@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
+import { useSession } from "next-auth/react"
 
 const Header = () => {
   // Navbar toggle
@@ -27,13 +28,16 @@ const Header = () => {
 
   // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index) => {
+  const handleSubmenu = (index:any) => {
     if (openIndex === index) {
       setOpenIndex(-1);
     } else {
       setOpenIndex(index);
     }
   };
+
+  const { data: session,status } = useSession();
+
 
   return (
     <>
@@ -132,9 +136,9 @@ const Header = () => {
                                 openIndex === index ? "block" : "hidden"
                               }`}
                             >
-                              {menuItem.submenu.map((submenuItem) => (
+                              {menuItem.submenu && menuItem.submenu.map((submenuItem) => (
                                 <Link
-                                  href={submenuItem.path}
+                                  href={submenuItem.path as string}
                                   key={submenuItem.id}
                                   className="block rounded py-2.5 text-sm text-dark hover:opacity-70 dark:text-white lg:px-3"
                                 >
@@ -149,20 +153,22 @@ const Header = () => {
                   </ul>
                 </nav>
               </div>
+     
               <div className="flex items-center justify-end pr-16 lg:pr-0">
+              { status=="authenticated" && (
+                <div>{session?.user?.name}</div>
+                ) }
+
+            { status!="authenticated" && (
                 <Link
                   href="/signin"
-                  className="hidden py-3 px-7 text-base font-bold text-dark hover:opacity-70 dark:text-white md:block"
+                  className="ease-in-up hidden rounded-md bg-primary py-3 px-8 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
                 >
                   Sign In
                 </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up hidden rounded-md bg-primary py-3 px-8 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
+            )}
                 <div>
+         
                   <ThemeToggler />
                 </div>
               </div>
