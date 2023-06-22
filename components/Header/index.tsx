@@ -108,6 +108,16 @@ const Header = () => {
                   }`}
                 >
                   <ul className="block lg:flex lg:space-x-12">
+                    {navbarOpen && status!="authenticated" && (
+                      <li key="s" className="group relative">
+                        <Link
+                        href='/signin'
+                        className={`flex py-2 text-base text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:py-6 lg:px-0`}
+                      >
+                        Sign In
+                      </Link>     
+                      </li>
+                    )}
                     {menuData.map((menuItem, index) => (
                       <li key={menuItem.id} className="group relative">
                         {menuItem.path ? (
@@ -152,6 +162,16 @@ const Header = () => {
                         )}
                       </li>
                     ))}
+                     {navbarOpen && status=="authenticated" && (
+                      <li key="s" className="group relative">
+                        <a
+                        onClick={() => signOut()}
+                        className={`flex  cursor-pointer py-2 text-base text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:py-6 lg:px-0`}
+                      >
+                        Logout
+                      </a>     
+                      </li>
+                    )}
                   </ul>
                 </nav>
               </div>
@@ -159,7 +179,7 @@ const Header = () => {
               <div className="flex items-center justify-end pr-16 lg:pr-0">
               { status=="authenticated" && (
                 <>
-                <div className="group relative">
+                <div className="group relative hidden lg:block">
                             <a
                               onClick={() => setOpenAcctMenu(1)}
                               className="flex  cursor-pointer items-center justify-between py-2 text-base text-dark dark:text-white lg:mr-0 lg:inline-flex lg:py-6 lg:px-0"
@@ -180,7 +200,7 @@ const Header = () => {
                               }`}
                             >
                                 <a  onClick={() => signOut()} 
-                                    className="block rounded py-2.5 text-sm text-dark hover:opacity-70 dark:text-white lg:px-3" >
+                                    className="block cursor-pointer rounded py-2.5 text-sm text-dark hover:opacity-70 dark:text-white lg:px-3" >
                                   Logout
                                 </a>
                               

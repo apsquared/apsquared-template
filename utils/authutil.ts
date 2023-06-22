@@ -27,7 +27,7 @@ export const authOptions: NextAuthOptions = {
       }),*/
         EmailProvider({
           server: process.env.SMTP_SERVER,
-          from: "bargpt@apsquared.co",
+          from: "info@apsquared.co",
           sendVerificationRequest({
             identifier: email,
             url,
