@@ -47,7 +47,7 @@ You can clone the repository with this command in your terminal (replace repo_ur
 
 bash
 Copy code
-git clone https://github.com/original/repo_url.git
+git clone https://github.com/apsquared/apsquared-template
 Create a new repository on GitHub:
 Head to GitHub and create a new repository. Do not initialize it with a README, .gitignore, or License. This needs to be an empty repository.
 
