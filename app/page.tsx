@@ -10,8 +10,16 @@ import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import Video from "@/components/Video";
 import { Inter } from "@next/font/google";
+import { Metadata } from 'next'
 
 const inter = Inter({ subsets: ["latin"] });
+
+
+ //https://nextjs.org/docs/app/building-your-application/optimizing/metadata
+export const metadata: Metadata = {
+  title: 'title',
+  description: 'description',
+}
 
 export default function Home() {
   return (
