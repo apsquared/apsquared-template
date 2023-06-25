@@ -38,6 +38,11 @@ GOOGLE_CLIENT_SECRET=""
 
 Helpful link: https://codevoweb.com/setup-and-use-nextauth-in-nextjs-13-app-directory/
 
+## UX Libs
+
+https://www.material-tailwind.com/docs/react/guide/next
+https://heroicons.com/
+
 ## Cloning Repos
 
 To create a copy of a GitHub repository as a new, independent repository, you would usually perform a procedure known as "cloning" the repository, then "pushing" it to a new repository. Here's a step-by-step guide on how to do this:
