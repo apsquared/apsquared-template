@@ -38,10 +38,20 @@ GOOGLE_CLIENT_SECRET=""
 
 Helpful link: https://codevoweb.com/setup-and-use-nextauth-in-nextjs-13-app-directory/
 
-## UX Libs
+## Setting up new gmail
+1. Go to workspace admin under info@apsquared
+2. Under Directory | Users select primary
+3. Add Alternate email
 
-https://www.material-tailwind.com/docs/react/guide/next
-https://heroicons.com/
+## UX Libs and tools
+
+* https://www.material-tailwind.com/docs/react/installation
+* https://v0.dev
+* ChatGPT / Bing for Images
+* https://hypercolor.dev - gradient creator
+* https://www.remove.bg/ - Remove Backgrounds
+* https://colorsui.com - color palletes
+* https://ui.shadcn.com/
 
 ## Cloning Repos
 
@@ -88,3 +98,5 @@ Your cloned repository is now copied and available as a brand-new repository.
 Remember, this method creates a new repository with a copy of the original repository's content, but it will not carry over issues, pull requests, wiki, or settings of the original repository.
 
 The whole history of the repository will be copied over to the new repository. If you do not want to copy the entire history, you may want to create a new repository, manually copy over the files and then make an initial commit.
+
+
